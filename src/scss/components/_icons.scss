@@ -1,0 +1,78 @@
+//
+// Icons
+//
+
+// Styling for the rounded social media links
+
+.social-icons {
+  .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.5rem;
+    width: 3.5rem;
+    background-color: lavender;
+    color: black;
+    border-radius: 100%;
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
+    border: #755686 1px solid;
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      background-color: $primary;
+    }
+  }
+}
+
+// Styling for the development technology icons
+.dev-icons {
+  .dev-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.5rem;
+    width: 3.5rem;
+    font-size: 3rem;
+    margin-right: 1.5rem;
+    position: relative;
+    cursor: pointer;
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      color: $primary;
+      content: attr(data-bs-title);
+    }
+    /* Tooltip text */
+    &:after {
+      content: attr(data-bs-title);
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: black;
+      padding: 5px 10px;
+      border-radius: 5px;
+      white-space: nowrap;
+      display: none;
+    }
+
+    /* Show the tooltip on hover */
+    &:hover::after {
+      display: block;
+    }
+  }
+}
+
+.custom-popover {
+  --bs-popover-max-width: 200px;
+  --bs-popover-border-color: var(--bs-purple);
+  --bs-popover-header-bg: var(--bs-purple);
+  --bs-popover-header-color: var(--bs-white);
+  --bs-popover-body-padding-x: 1rem;
+  --bs-popover-body-padding-y: 0.5rem;
+}

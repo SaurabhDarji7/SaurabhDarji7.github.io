@@ -1,0 +1,410 @@
+doctype html
+html(lang='en')
+
+    head
+
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        meta(name='description' content='Personal Portfolio')
+        meta(name='author' content='Saurabh Darji')
+
+        title Portfolio - Saurabh Darji
+
+        link(rel='icon' type='image/x-icon' href='assets/img/favicon.png')
+
+        // Font Awesome icons (free version)
+        script(src='https://use.fontawesome.com/releases/v6.3.0/js/all.js' crossorigin='anonymous')
+
+        // Dev Icons
+        link(href='https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css' rel='stylesheet')
+
+        // Google fonts
+        link(href='https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700' rel='stylesheet' type='text/css')
+        link(href='https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i' rel='stylesheet' type='text/css')
+
+        // AOS CSS
+        link(href='https://unpkg.com/aos@2.3.1/dist/aos.css' rel='stylesheet')
+
+        // Core theme CSS (includes Bootstrap)
+        link(href='css/styles.css' rel='stylesheet')
+
+    body#page-top
+
+        // Navigation
+        nav#sideNav.navbar.navbar-expand-lg.navbar-dark.bg-primary.fixed-top
+            a.navbar-brand.js-scroll-trigger(href='#page-top')
+                span.d-block.d-lg-none Saurabh Darji
+                span.d-none.d-lg-block
+                    img.img-fluid.img-profile.rounded-circle.mx-auto.mb-2(src='assets/img/SaurabhDarji.png' alt='...')
+            button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+            #navbarResponsive.collapse.navbar-collapse
+                ul.navbar-nav
+                    li.nav-item
+                        a.nav-link.js-scroll-trigger(href='#about') About Me
+                    li.nav-item
+                        a.nav-link.js-scroll-trigger(href='#experience') Experience
+                    li.nav-item
+                        a.nav-link.js-scroll-trigger(href='#projects') Projects
+                    li.nav-item
+                        a.nav-link.js-scroll-trigger(href='#education') Education
+                    li.nav-item
+                        a.nav-link.js-scroll-trigger(href='#skills') Skills
+                    li.nav-item
+                        a.nav-link.js-scroll-trigger(href='#interests') Interests
+                    li.nav-item
+                        a.nav-link.js-scroll-trigger(href='#volunteer') Volunteer Works
+
+        // Page Content
+        .container-fluid.p-0
+
+            // About
+            section#about.resume-section
+                .bg 
+                .bg.bg2 
+                .bg.bg3
+                .resume-section-content
+                    h1.mb-0
+                        | Saurabh 
+                        span.text-primary Darji  
+                    .subheading.mb-5
+                        h5.mb-5
+                            | Canada · (519) 719-1265 · 
+                            a(href='mailto:saurabh77.darji@gmail.com') saurabh77.darji@gmail.com
+
+                    .subheading.mb-3.mt-3
+                        | I'm a 
+                        span.typed(data-typed-items='Programmer., Software Developer.,')  
+
+                        p.normal.lead.mb-5.mt-3
+                            | Experienced Software Developer with over a year of hands-on industry expertise in diverse projects spanning Banking, Research, and Advisory sectors. Proficient in a wide array of web technologies, frameworks, and programming languages.
+                        p.lead.mb-3 
+                            | Please contact me via social media links!
+                            | Don't forget to download my resume!
+                        p.social-icons
+                            a.social-icon(href='https://www.linkedin.com/in/saurabh-darji-5365651b5/' target='_blank' title='LinkedIn')
+                                i.fab.fa-linkedin-in
+                            a.social-icon(href='https://github.com/SaurabhDarji7' target='_blank' title='Github')
+                                i.fab.fa-github
+                            a.social-icon(href='https://www.instagram.com/saurabh.0707/' target='_blank' title='Instagram')
+                                i.fab.fa-instagram
+                            a.social-icon(href='https://drive.google.com/file/d/1sjqElgdrCKNcLIZjchZMV9YdNc_pJeyM/view?usp=sharing' target='_blank' title='Resume')
+                                i.fa-regular.fa-id-card
+            hr.m-0
+
+            // Experience
+            section#experience.resume-section
+                .resume-section-content
+                    h2.mb-5 Experience
+
+                    // Experience 1
+                    .d-flex.flex-column.flex-md-row.justify-content-between.mb-5(data-aos="zoom-out-down" data-aos-duration="1000")
+                    .flex-grow-1
+                        h3.mb-0 Software Developer
+                        .subheading.mb-3 Info-Tech Research Group - London, ON
+                        p.mb-0 May 2023 - August 2023
+                        ul.mb-0 
+                            li Contributed to the company’s multiple Ruby on Rails Projects: www.infotech.com, www.softwarereviews.com, and DDR-reports (in-house software application for generating Reports and awards).
+                            li Redesigned Alert Notification Components: Led and implemented the redesign of the Alert Notification components across the company's website, optimizing user experience and engagement.
+                            li Staging Server Multi-User Access: Enabled concurrent logins for multiple users on staging servers, facilitating collaborative work for developers and QA.
+                            li Expanded Payment Functionality: Successfully integrated Sendoso payment processing capabilities and amazon gift code functionalities, broadening the platform's revenue generation avenues and increasing payment receiving windows for users.
+                            li Efficient Concurrent Request Prevention: Implemented Sidekiq status integration to intelligently prevent users from submitting multiple download requests of reports 1 million+ records concurrently and giving alert notifications using Turbo Frames and Stimulus.js, thereby improving overall system efficiency.
+                            li Robust Testing and Code Stability: Ensured code quality and stability by writing robust system tests using Capybara and following test-driven development practices.
+                            li Collaborative API Development: Collaborated on a shared API application employed by multiple applications and databases, facilitating seamless data retrieval and movement across various pages and applications.
+                            li Complex Support Tickets: Successfully resolved complex support tickets by employing strong analytical skills and in-depth knowledge of the application's architecture, leading to enhanced user satisfaction and user experience.
+                            li Efficient Deployment and CI/CD: Played a key role in deploying new features and updates to production, following industry best practices for continuous integration and delivery.
+                            li Enhanced Code Coverage: Contributed to increasing code coverage by creating and executing spike tickets, identifying, and addressing critical areas for improvement.
+                            li Stakeholder Demos: Conducted informative feature demonstrations for stakeholders, explaining the built features in an easier way.
+                        p.resume-section-content-sills.fw-light.mt-3
+                            | Skills: Ruby on Rails · JavaScript · Vue.js · React.js · Test-Driven Development · CI/CD
+
+                    // Experience 2
+                    .d-flex.flex-column.flex-md-row.justify-content-between.mb-5(data-aos="zoom-out-down" data-aos-duration="1000")
+                    .flex-grow-1
+                        h3.mb-0 Software Developer
+                        .subheading.mb-3 S&P GLOBAL - London, ON
+                        p.mb-0 September 2022 - December 2022
+                        ul.mb-0 
+                            li Contributed to a cross-functional agile team developing and maintaining websites for some of the biggest names in the financial industry like BMO, CIBC, ALLY, and Deutsche Bank.
+                            li Developed single-page applications in Vue.js and React.js.
+                            li Uplifted some of the APIs Nodejs projects.
+                            li Added Price Charts and Daily stock market charts to different components on the applications.
+                            li Added a corporate calendar feature to make users aware about the new stock market events in the future.
+                            li Worked on microservice-style backend applications to retrieve data from complex datasets used for financial analysis.
+                            li Used Test-Driven-Development technologies to write end-to-end unit tests for features.
+                            li Developed a good understanding of financial markets in US and Canada.
+                            li Utilized source control, automation tools, and CI/CD processes to improve development cycles and optimize production releases.
+                        p.resume-section-content-sills.fw-light.mt-3
+                            | Skills: Vue.js · React.js · Node.js · Test-Driven Development · CI/CD · Financial Markets
+
+                    // Experience 3
+                    .d-flex.flex-column.flex-md-row.justify-content-between.mb-5(data-aos="zoom-out-down" data-aos-duration="1000")
+                    .flex-grow-1
+                        h3.mb-0 Software Developer
+                        .subheading.mb-3 Info-Tech Research Group - London, ON
+                        p.mb-0 January 2022 – April 2022
+                        ul.mb-0 
+                            li Responsible for developing dynamic features using HTML, SCSS, Vue.js, and Ruby for both desktop and mobile devices.
+                            li Developed a good understanding of contributing to an Agile Team and CI/CD workflows.
+                            li Familiarized myself with managing databases using Active Record in Ruby.
+                            li Used Test-Driven-Development technologies to write unit tests.
+                            li Utilized best industry best practices for mobile and desktop responsive web design.
+                            li Developed user-friendly web pages and features to effectively optimize user experience.
+                        p.resume-section-content-sills.fw-light.mt-3
+                            | Skills: Ruby · Ruby on Rails · Vue.js · Test-Driven Development · CI/CD · Responsive Web Design
+
+            hr.m-0
+
+            // Projects
+            section#projects.resume-section
+                .resume-section-content
+                    h2.mb-5 Projects
+                    .container
+                        .row
+                            .col-lg-4.col-sm-6.mb-4(data-aos="fade-down-left" data-aos-duration="1000")
+                                .card.project.h-100
+                                    a(href='https://saurabhdarji-chatup.onrender.com/' target='_blank')
+                                        img.card-img-top(src='assets/img/projects/ChatUp.png' alt='mern-chat-app')
+                                    .card-body
+                                        h4.card-title
+                                            a(href='https://github.com/SaurabhDarji7/ChatUp' target='_blank') MERN Chat Application
+                                        p.card-text
+                                            | Created a MERN chat application with real-time messaging, user-friendly room management, and dynamic features like random user-specific color-coding and typing indicators.
+                                        p.resume-section-content-sills.fw-light.mt-3
+                                            | Tech Stack: Node.js, Socket.io, ReactJS, Material UI. Socket.io, JavaScript
+
+                            .col-lg-4.col-sm-6.mb-4(data-aos="fade-down-left" data-aos-duration="1000")
+                                .card.project.h-100
+                                    a(href='https://github.com/SaurabhDarji7/Golf-3D' target='_blank')
+                                        img.card-img-top(src='assets/img/projects/Project-Game-Menu.png' alt='golf-3d-game')
+                                    .card-body
+                                        h4.card-title
+                                            a(href='https://github.com/SaurabhDarji7/Golf-3D' target='_blank') GOLF-3D Game
+                                        p.card-text
+                                            | Developed an exciting 3D golf game using Unity and C#. It offers five challenging levels, start and end menus, providing an enjoyable gaming experience.
+                                        p.resume-section-content-sills.fw-light.mt-3
+                                            | Tech Stack: Unity Games Engine · C#
+
+                            .col-lg-4.col-sm-6.mb-4(data-aos="fade-down-left" data-aos-duration="1000")
+                                .card.project.h-100                            
+                                    a(href='https://github.com/SaurabhDarji7/Fraction-Calculator-Executable' target='_blank')
+                                        img.card-img-top(src='assets/img/projects/project-fraction-calculator.png' alt='fraction-calculator')
+                                    .card-body
+                                        h4.card-title
+                                            a(href='https://github.com/SaurabhDarji7/Fraction-Calculator-Executable' target='_blank') Fraction Calculator
+                                        p.card-text
+                                            | Created a user-friendly Fraction Calculator in Java with a Swing GUI. This calculator performs operations such as addition, subtraction, multiplication, division, and sorting on fractions and displays the results.
+                                        p.resume-section-content-sills.fw-light.mt-3
+                                            | Tech Stack: Java · Swing (GUI Library)
+
+                            .col-lg-4.col-sm-6.mb-4(data-aos="fade-up" data-aos-duration="1000")
+                                .card.project.h-100
+                                    a(href='https://github.com/e-choness/e-choenss.github.io' target='_blank')
+                                        img.card-img-top(src='assets/img/projects/project-portfolio.jpg' alt='portfolio')
+                                    .card-body
+                                        h4.card-title
+                                            a(href='https://github.com/e-choness/e-choenss.github.io' target='_blank') Portfolio Website
+                                        p.card-text
+                                            | Welcome to my portfolio website, where I highlight my skills, work experience, and projects. I crafted this website using a Resume template by Start Bootstrap, and I've enhanced it with advanced Bootstrap snippets and third-party animation plugins. It's designed to showcase my work in a captivating and engaging manner.
+                                        p.resume-section-content-sills.fw-light.mt-3
+                                            | Tech Stack: PUG · SCSS · NPM · HTML · CSS · Javascript · Bootstrap · Typed · AOS
+
+                            .col-lg-4.col-sm-6.mb-4(data-aos="fade-up-left" data-aos-duration="1000")
+                                .card.project.h-100
+                                    a(href='https://github.com/e-choness/WebGIS-Application-for-House-Discovery')
+                                        img.card-img-top(src='assets/img/projects/ReactNative.jpg' alt='rental-discovery')
+                                    .card-body
+                                        h4.card-title
+                                            a(href='[React Native Mobile App GitHub Link]' target='_blank') React Native Mobile App
+                                        p.card-text 
+                                            | Created a React Native app with Firebase authentication, real-time messaging, text-to-speech, and integrated Expo APIs for email and image handling, enabling seamless communication and contact management.
+                                        p.resume-section-content-sills.fw-light.mt-8
+                                            | Tech Stack: React, React Native, Firebase, Node.js, JavaScript, Expo, React Navigation
+            hr.m-0
+
+            // Education
+            section#education.resume-section
+                .resume-section-content
+                    h2.mb-5 Education
+                    .container
+                        .row.hcf-isotope-grid.justify-content-center.g-5
+                            .col-md-4.hcf-isotope-item(data-aos="fade-right" data-aos-duration="1000")
+                                .lc-block
+                                    img.img-fluid.img-thumbnail.d-none.d-md-block(src='assets/img/fanshawe-logo.png' alt='Fanshawe College')
+                            .col-md-8.hcf-isotope-item(data-aos="fade-left" data-aos-duration="1000")
+                                .lc-block
+                                    h3.mb-0 Fanshawe College
+                                    .subheading.mb-3 Advanced Diploma
+                                    div Computer Programming & Analysis
+                                    span.text-primary January 2021 - December 2023
+                                    p   
+                                        | 
+                                    p.lead
+                                        | Relevant Coursework:
+                                        li Software Development
+                                        li Application Development
+                                        li Databases (SQL server, Oracle DB, etc.)
+                                        li Web Applications
+                                    p.lead
+                                        | Activities and societies: 
+                                    p
+                                        | A consistent volunteer for peer mentor groups.
+            hr.m-0
+            // Skills
+            section#skills.resume-section
+                .resume-section-content
+                    h2.mb-5 Skills
+                    div(data-aos="zoom-out-down" data-aos-duration="1000")
+                        .subheading.mb-3(data-aos="zoom-out-up" data-aos-duration="1000") Programming Languages
+                        ul.list-inline.dev-icons
+                            li.list-inline-item.dev-icon
+                                i.devicon-cplusplus-plain
+                            li.list-inline-item.dev-icon         
+                                i.devicon-csharp-plain
+                            li.list-inline-item.dev-icon
+                                i.devicon-python-plain
+                            li.list-inline-item.dev-icon
+                                i.devicon-androidstudio-plain
+                            li.list-inline-item.dev-icon
+                                i.devicon-ruby-plain
+                            li.list-inline-item.dev-icon
+                                i.devicon-javascript-plain
+                            li.list-inline-item.dev-icon
+                                i.devicon-java-plain
+                            li.list-inline-item.dev-icon
+                                i.devicon-c-plain
+
+                    div(data-aos="zoom-out-down" data-aos-duration="1000")
+                        .subheading.mb-3(data-aos="zoom-out-up" data-aos-duration="1000") Frameworks
+                        ul.list-inline.dev-icons
+                            li.list-inline-item.dev-icon
+                                i.devicon-css3-plain
+                            li.list-inline-item.dev-icon
+                                i.devicon-html5-plain
+                            li.list-inline-item.dev-icon
+                                i.devicon-sass-original
+                            li.list-inline-item.dev-icon
+                                i.devicon-jquery-plain
+                            li.list-inline-item.dev-icon
+                                i.devicon-dot-net-plain
+                            li.list-inline-item.dev-icon
+                                i.devicon-rails-plain
+                            li.list-inline-item.dev-icon
+                                i.devicon-vuejs-plain
+                            li.list-inline-item.dev-icon
+                                i.devicon-nodejs-plain
+                            li.list-inline-item.dev-icon
+                                i.devicon-bootstrap-plain
+                            li.list-inline-item.dev-icon
+                                i.devicon-react-original
+
+                    div(data-aos="zoom-out-down" data-aos-duration="1000")
+                        .subheading.mb-3(data-aos="zoom-out-up" data-aos-duration="1000") Other
+                        ul.list-inline.dev-icons
+                            li.list-inline-item.dev-icon
+                                i.devicon-mysql-plain
+                            li.list-inline-item.dev-icon
+                                i.devicon-graphql-plain
+                            li.list-inline-item.dev-icon
+                                i.devicon-vscode-plain
+                            li.list-inline-item.dev-icon
+                                i.devicon-jest-plain
+                            li.list-inline-item.dev-icon
+                                i.devicon-jira-plain
+                    div(data-aos="zoom-out-down" data-aos-duration="1000")
+                        .subheading.mb-3(data-aos="zoom-out-up" data-aos-duration="1000") -------------------------------------------------------------------------------------
+
+
+                    div(data-aos="zoom-out-up" data-aos-duration="1000")            
+                        .subheading.mb-3(data-aos="zoom-out-up" data-aos-duration="1000") Strengths
+                        ul.fa-ul.mb-3
+                            li
+                                span.fa-li
+                                    i.fas.fa-comments
+                                | Open-mind to New Ideas
+                            li
+                                span.fa-li
+                                    i.fas.fa-heart
+                                | Love Constructive Feedback
+                            li
+                                span.fa-li
+                                    i.fas.fa-users
+                                | Learning Effective Communication with Functional Teams
+                            li
+                                span.fa-li
+                                    i.fas.fa-hat-wizard
+                                | Strong Will & Thinking Outside Box
+
+            hr.m-0
+
+            // Interests
+            section#interests.resume-section
+                .resume-section-content
+                    h2.mb-5 Interests
+                        // Interests
+                        .container.overflow-hidden.py-5.py-xl-6
+                            .row.gy-3.g-md-3.hcf-isotope-grid
+                                .col-12.col-md-6.col-lg-6.hcf-isotope-item(data-aos="fade-up-right" data-aos-duration="1000")
+                                    a.hcf-masonry-card.rounded.rounded-4(href='#!')
+                                        img.card-img.img-fluid(loading='lazy' src='assets/img/interests/Travelling.jpg' alt='crafts')
+                                        |           
+                                        .card-overlay.d-flex.flex-column.justify-content-center.bg-dark.p-4(style='--bs-bg-opacity: .5;')
+                                            h3.card-title.text-white.text-center.mb-1 Travelling
+                                .col-12.col-md-6.col-lg-3.hcf-isotope-item(data-aos="fade-down-left" data-aos-duration="1000")
+                                    a.hcf-masonry-card.rounded.rounded-4(href='#!')
+                                        img.card-img.img-fluid(loading='lazy' src='assets/img/interests/Books.jpg' alt='books')
+                                        |           
+                                        .card-overlay.d-flex.flex-column.justify-content-center.bg-dark.p-4(style='--bs-bg-opacity: .5;')
+                                            h3.card-title.text-white.text-center.mb-1 Books
+                                .col-12.col-md-6.col-lg-6.hcf-isotope-item(data-aos="fade-down" data-aos-duration="1000")
+                                    a.hcf-masonry-card.rounded.rounded-4(href='#!')
+                                        img.card-img.img-fluid(loading='lazy' src='assets/img/interests/Football.jpg' alt='games')
+                                        |           
+                                        .card-overlay.d-flex.flex-column.justify-content-center.bg-dark.p-4(style='--bs-bg-opacity: .5;')
+                                            h3.card-title.text-white.text-center.mb-1 Football
+                                .col-12.col-md-6.col-lg-3.hcf-isotope-item(data-aos="fade-down-right" data-aos-duration="1000")
+                                    a.hcf-masonry-card.rounded.rounded-4(href='#!')
+                                        img.card-img.img-fluid(loading='lazy' src='assets/img/interests/Cricket.jpg' alt='cricket')
+                                        |           
+                                        .card-overlay.d-flex.flex-column.justify-content-center.bg-dark.p-4(style='--bs-bg-opacity: .5;')
+                                            h3.card-title.text-white.text-center.mb-1 Cricket
+
+
+            hr.m-0
+
+            // Volunteer Works
+            section#volunteer.resume-section
+                .resume-section-content
+                    h2.mb-5 Volunteer Works
+                    .d-flex.flex-column.flex-md-row.justify-content-between.mb-5(data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000")
+                        .flex-grow-1
+                            h3.mb-0 Peer Mentor
+                            .subheading.mb-3 Fanshawe College 
+                            ul.mb-0 
+                                li Assisted newly enrolled students in program with their assignments and projects.
+                                li Mentored and guided students with their doubts and questions.
+                                li Conducted thorough code reviews, troubleshooting issues, and drawing effective solutions.
+                        .flex-shrink-0
+                            span.text-primary September 2021 - September 2022
+
+            footer.p-5.text-center.position-relative
+                .container
+                    p.lead Copyright &copy; 2023 Saurabh Darji
+                    |         
+                    a.position-abusolute.bottom-0.end-0.p-5(href='#')
+                        i.fa-solid.fa-circle-arrow-up.fa-2xl
+
+        // Bootstrap core JS
+        script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js')
+
+        // AOS JS
+        script(src='https://unpkg.com/aos@2.3.1/dist/aos.js') 
+
+        //Typed JS
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.16/typed.umd.js') 
+
+        // Isotope JS
+        script(src='https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js') 
+
+        // Core theme JS
+        script(src='js/scripts.js')
