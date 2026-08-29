@@ -1,0 +1,166 @@
+/* layout.css — the page frame: moving background, sidebar, and section shell. */
+
+/* ---------------------------------------------- moving background ------- */
+
+/* Three identical striped layers behind the page, each sliding at a different
+   speed. Overlapping them makes the gradient look like it is slowly breathing.
+
+   They are wider than the screen (left and right pulled out by 50%) so that
+   when a layer slides sideways, no empty edge ever comes into view. */
+.bg-layer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -50%;
+  right: -50%;
+  z-index: -1;              /* sits behind everything */
+  opacity: .5;
+  background-image: linear-gradient(-60deg, var(--lavender) 49.5%, var(--pale-green) 50%);
+  animation: slide 14s ease-in-out infinite alternate;
+}
+
+/* Same animation, different speeds, so the layers drift apart and back together. */
+.bg-layer-2 { animation-duration: 16s; animation-direction: alternate-reverse; }
+.bg-layer-3 { animation-duration: 18s; }
+
+@keyframes slide {
+  from { transform: translateX(-25%); }
+  to   { transform: translateX(25%); }
+}
+
+/* ------------------------------------------------------- sidebar -------- */
+
+/* Small screens: a purple bar pinned across the top. */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  background-color: var(--purple);
+  padding: .5rem 1rem;
+}
+
+/* Name on the left, menu button on the right. */
+.sidebar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar-brand { display: flex; align-items: center; color: #fff; padding: .25rem 0; }
+.sidebar-brand:hover { color: #fff; }
+.sidebar-name { font-family: var(--font-heading); font-size: 1.25rem; }
+
+.sidebar .profile-photo { display: none; }   /* photo only appears on large screens */
+
+.menu-button {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, .4);
+  border-radius: .25rem;
+  color: #fff;
+  font-size: 1.1rem;
+  padding: .35rem .6rem;
+  cursor: pointer;
+}
+
+/* The menu is hidden until JavaScript adds .is-open (see scripts.js). */
+.sidebar-menu { display: none; }
+.sidebar-menu.is-open { display: block; }
+
+.sidebar-menu ul { list-style: none; padding: 0; margin: .5rem 0 0; }
+
+.sidebar-menu .nav-link {
+  display: block;               /* the whole row is clickable, not just the words */
+  padding: .5rem 0;
+  color: rgba(255, 255, 255, .55);
+  font-family: var(--font-heading);
+  letter-spacing: .05rem;
+  text-transform: uppercase;
+}
+.sidebar-menu .nav-link:hover,
+.sidebar-menu .nav-link.is-active { color: #fff; }
+
+/* Large screens (992px and up): the top bar becomes a full-height sidebar. */
+@media (min-width: 992px) {
+  /* Push the page content across so it clears the fixed sidebar. */
+  body { padding-top: 0; padding-left: var(--sidebar-width); }
+
+  .sidebar {
+    right: auto;                 /* stop stretching across; use a fixed width */
+    width: var(--sidebar-width);
+    height: 100vh;               /* full height of the screen */
+    padding: 0;
+    text-align: center;
+
+    /* A vertical flex column, with its contents centred as a group.
+       That is what keeps the photo + menu in the middle of the sidebar. */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .sidebar-top { display: block; }
+  .sidebar-brand { display: block; padding: .5rem; }
+  .sidebar-name { display: none; }   /* the photo replaces the name here */
+
+  .sidebar .profile-photo {
+    display: block;
+    width: 10rem;
+    height: 10rem;
+    margin: 0 auto;
+    border-radius: 50%;               /* a circle */
+    border: .5rem solid rgba(255, 255, 255, .2);
+    object-fit: cover;                /* fill the circle without squashing the photo */
+  }
+
+  .menu-button { display: none; }     /* no burger needed, the menu is always open */
+
+  .sidebar-menu { display: block; width: 100%; }
+  .sidebar-menu ul { margin-top: 0; }
+  .sidebar-menu .nav-link { padding: .5rem 1rem; }
+}
+
+/* --------------------------------------------------- page sections ------ */
+
+/* Every section is a flex box that centres its content vertically. */
+.page-section {
+  display: flex;
+  align-items: center;
+  max-width: 75rem;
+  padding: 5rem 1rem;
+}
+.section-inner { width: 100%; }
+
+/* From tablet up, each section fills at least one screen height. */
+@media (min-width: 768px) { .page-section { min-height: 100vh; } }
+@media (min-width: 992px) { .page-section { padding-left: 3rem; padding-right: 3rem; } }
+
+/* ------------------------------------------------------- headings ------- */
+
+.subheading {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--purple);
+  margin-bottom: .75rem;
+}
+
+.contact-line { font-family: var(--font-heading); font-size: 1.25rem; margin: .5rem 0 3rem; }
+.contact-line a { color: var(--purple); }
+
+/* --------------------------------------------------- typing effect ------ */
+
+.typing-line { margin-bottom: 1rem; }
+
+/* A blinking cursor drawn after the text. step-end makes it flick on and off
+   instead of fading. */
+.typing-text::after {
+  content: "|";
+  margin-left: .1em;
+  font-weight: 300;
+  animation: caret 1s step-end infinite;
+}
+@keyframes caret { 50% { opacity: 0; } }
+
+.entry-skills { color: var(--green); font-weight: 300; margin-top: .75rem; }

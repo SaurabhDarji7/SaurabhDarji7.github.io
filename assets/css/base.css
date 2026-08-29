@@ -1,0 +1,82 @@
+/* base.css — colours, fonts, and how plain HTML elements look.
+   Loaded first, so everything below can use these variables. */
+
+/* Custom properties: named values reused across every file.
+   Change the colour here and it changes everywhere. */
+:root {
+  --purple: #755686;      /* main brand colour: sidebar, links, headings accent */
+  --green: #718e4c;       /* accent used for the "Skills:" lines */
+  --lavender: #e6e6fa;    /* pale purple, used in the moving background */
+  --pale-green: #f6faee;  /* pale green, the other half of that background */
+
+  --text-gray: #6c757d;   /* body text */
+  --dark-gray: #343a40;   /* headings */
+
+  --sidebar-width: 17rem;  /* width of the fixed sidebar on large screens */
+  --topbar-height: 3.375rem; /* height of the bar on small screens */
+
+  --font-body: "Titillium Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-heading: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;   /* clicking a nav link glides instead of jumping */
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-gray);
+  background: transparent;   /* transparent so the moving background shows through */
+  padding-top: var(--topbar-height);  /* leave room for the fixed top bar */
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--dark-gray);
+}
+
+h1 { font-size: 4rem; text-transform: uppercase; line-height: 1; margin-bottom: 0; }
+h2 { font-size: 3rem; margin-bottom: 3rem; }
+h3 { font-size: 2rem; margin-bottom: 0; }
+
+p { margin-bottom: 1rem; }
+p.lead { font-size: 1.15rem; font-weight: 400; }  /* slightly bigger intro paragraphs */
+
+.text-dark   { color: var(--dark-gray); }
+.text-purple { color: var(--purple); }
+
+hr { margin: 0; border: 0; border-top: 1px solid rgba(0, 0, 0, .1); }
+
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--purple); }
+
+ul { list-style: disc; padding-left: 1.25rem; }
+li { margin-bottom: .25rem; }
+
+/* Hidden off-screen until a keyboard user tabs to it, then it slides into view. */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: -9999px;
+  z-index: 100;
+  padding: .75rem 1rem;
+  background: var(--purple);
+  color: #fff;
+}
+.skip-link:focus { left: 0; color: #fff; }
+
+/* A visible ring on anything focused by keyboard (not by mouse click).
+
+   Links and buttons are listed by name because Bulma styles those two with
+   `a:focus-visible, button:focus-visible`. That selector is more specific than
+   a bare `:focus-visible`, so without naming them here Bulma's blue ring wins
+   on exactly the elements people tab through most. */
+a:focus-visible,
+button:focus-visible,
+:focus-visible {
+  outline: 3px solid var(--purple);
+  outline-offset: 2px;
+}

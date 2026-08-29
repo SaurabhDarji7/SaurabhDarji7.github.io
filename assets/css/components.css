@@ -1,0 +1,279 @@
+/* components.css — the reusable blocks: entries, skills, certificates,
+   interest cards, photo galleries, the photo viewer, and the footer. */
+
+/* ---------------------------------------------------- job / school entry -- */
+
+/* Small screens: heading, text, then the date underneath.
+   Wide screens: text on the left, date on the right. */
+.entry {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.entry-body { flex-grow: 1; }   /* takes the leftover width, pushing the date right */
+.entry ul { margin-bottom: 0; }
+
+.entry-date {
+  color: var(--purple);
+  flex-shrink: 0;               /* never squash the date onto two lines */
+  margin-top: .5rem;
+}
+
+/* Pulled up slightly so it sits close under the company name. */
+.entry-meta { color: var(--text-gray); font-size: .95rem; margin: -.5rem 0 .75rem; }
+
+@media (min-width: 768px) {
+  .entry { flex-direction: row; }
+  .entry-date { margin-top: 0; text-align: right; padding-left: 2rem; }
+}
+
+/* --------------------------------------------------------------- skills --- */
+
+.skill-icons {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.75rem;
+  display: flex;
+  flex-wrap: wrap;              /* icons flow onto as many rows as needed */
+  gap: 1.25rem 1.5rem;          /* row gap, column gap */
+}
+
+.skill-icon {
+  position: relative;           /* anchor for the label below */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 0;
+  color: var(--text-gray);
+  cursor: pointer;
+}
+.skill-icon i { font-size: 3rem; line-height: 1; }
+.skill-icon:hover { color: var(--purple); }
+
+/* The name under an icon: hidden until you hover.
+   left:50% puts its left edge at the middle, then translateX(-50%) slides it
+   back by half its own width, which centres it whatever the name's length. */
+.skill-icon-label {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  padding: .3rem .6rem;
+  white-space: nowrap;          /* keep the name on one line */
+  color: #000;
+  font-size: .875rem;
+}
+.skill-icon:hover .skill-icon-label { display: block; }
+
+/* ------------------------------------------------------- certificates ----- */
+
+.cert-list { list-style: none; padding: 0; margin: 0; }
+
+.cert-list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: .8rem 0;
+  margin: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .08);
+}
+.cert-list li:last-child { border-bottom: 0; }
+
+/* The issuer's logo in a small white tile. */
+.cert-logo {
+  flex-shrink: 0;               /* keep the tile square when the title is long */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: .5rem;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, .1);
+  font-size: 1.35rem;
+}
+.cert-logo.is-linkedin { color: #0a66c2; }   /* LinkedIn brand blue */
+
+.cert-name {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--dark-gray);
+}
+.cert-name i { font-style: italic; color: var(--text-gray); }
+
+/* -------------------------------------------------------- interests ------ */
+
+/* One column on phones; three columns from tablet up, where two of the cards
+   are told to span two columns each to make the uneven layout. */
+.interests-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .interests-grid { grid-template-columns: repeat(3, 1fr); }
+  .interest-wide  { grid-column: span 2; }
+}
+
+.interest-card {
+  position: relative;           /* anchor for the overlay */
+  overflow: hidden;             /* clips the photo when it zooms in */
+  border-radius: .5rem;
+  margin: 0;
+  height: 100%;
+}
+
+.interest-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 14rem;
+  object-fit: cover;            /* fill the card, cropping rather than stretching */
+  transition: transform 150ms linear;
+}
+
+/* A dark panel covering the whole card, invisible until hover. */
+.interest-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, .5);
+  opacity: 0;
+  transition: opacity 150ms linear;
+}
+
+.interest-overlay span {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(10px);  /* starts slightly low, slides up on hover */
+}
+
+.interest-card:hover img { transform: scale(1.05); }
+.interest-card:hover .interest-overlay { opacity: 1; }
+.interest-card:hover .interest-overlay span {
+  opacity: 1;
+  transform: translateY(0);
+  /* the delay makes the title arrive just after the dark panel */
+  transition: transform 150ms linear .1s, opacity 150ms linear .1s;
+}
+
+/* ----------------------------------------------------- social icons ------ */
+
+.social-icons { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 2rem; }
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background-color: var(--lavender);
+  border: 1px solid var(--purple);
+  color: #000;
+  font-size: 1.5rem;
+}
+.social-icon:hover { background-color: var(--purple); color: #fff; }
+
+/* --------------------------------------------------- photo thumbnails ---- */
+
+.gallery {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  padding: 0;
+  margin: 1.25rem 0 0;
+}
+.gallery li { margin: 0; }
+
+/* Each thumbnail is a button, so it can be reached and opened by keyboard. */
+.gallery-item {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: none;
+  border-radius: .5rem;
+  overflow: hidden;
+  cursor: zoom-in;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .12);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.gallery-item img {
+  display: block;
+  width: 8.5rem;
+  height: 6.25rem;
+  object-fit: cover;
+}
+
+/* Lifts slightly on hover, and on keyboard focus too. */
+.gallery-item:hover,
+.gallery-item:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .22);
+}
+
+@media (min-width: 768px) {
+  .gallery-item img { width: 10.5rem; height: 7.5rem; }
+}
+
+/* ---------------------------------------------------- photo viewer ------- */
+
+/* The viewer itself is GLightbox (loaded in index.html). These few rules pull
+   its default look towards the rest of the site — nothing structural. */
+
+.glightbox-clean .gslide-description { background: transparent; }
+
+.glightbox-clean .gslide-desc {
+  font-family: var(--font-body);
+  font-size: .95rem;
+  text-align: center;
+  color: var(--lavender);
+}
+
+/* Rounded corners on the photo, matching the thumbnails. */
+.gslide-media img { border-radius: .5rem; }
+
+/* Its arrows and close button are white SVGs; tint them on hover. */
+.glightbox-clean .gclose:hover path,
+.glightbox-clean .gnext:hover path,
+.glightbox-clean .gprev:hover path { fill: var(--purple); }
+
+/* Keyboard focus ring in the site's purple rather than its default blue. */
+.gbtn.focused { outline: 3px solid var(--purple); }
+
+/* ---------------------------------------------------------- footer ------- */
+
+.site-footer {
+  position: relative;        /* anchor for the back-to-top arrow */
+  padding: 3rem 1rem;
+  text-align: center;
+  background-color: var(--dark-gray);
+  color: var(--lavender);
+}
+.site-footer p { margin: 0; }
+
+.back-to-top {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  font-size: 2rem;
+  color: var(--lavender);
+}
+.back-to-top:hover { color: #fff; }

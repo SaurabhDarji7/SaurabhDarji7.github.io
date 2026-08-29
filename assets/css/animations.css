@@ -1,0 +1,31 @@
+/* animations.css — small adjustments to AOS (the scroll-animation library),
+   plus turning motion off for people who ask their system for less of it. */
+
+/* AOS fades elements in as you scroll. Its default "fade-up" slides them
+   100px, which is a lot on a text-heavy page — 24px is enough to notice. */
+[data-aos="fade-up"] {
+  transform: translate3d(0, 24px, 0);
+}
+
+/* AOS's stylesheet sets these elements to opacity:0 and relies on its
+   JavaScript to fade them back in. If that script fails to load, the page
+   would stay blank. The one-line script in <head> adds .js to <html>, so
+   when it is missing we simply show everything. */
+html:not(.js) [data-aos] {
+  opacity: 1;
+  transform: none;
+}
+
+/* Some people get motion sickness from movement on screen and set a system
+   preference for less of it. AOS is switched off for them in scripts.js;
+   these rules stop the two animations it does not control. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .bg-layer { animation: none; }
+  .typing-text::after { animation: none; }
+
+  .interest-card img,
+  .interest-overlay,
+  .interest-overlay span { transition: none; }
+}
