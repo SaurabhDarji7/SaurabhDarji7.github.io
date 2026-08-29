@@ -1,10 +1,12 @@
 # Deploys the site to GitHub Pages. There is no build step: the repository
 # root is the site, so the checkout is uploaded as-is.
+#
+# Pages is currently set to "Deploy from a branch", which publishes the branch
+# directly and does not use this workflow. It is kept here, runnable by hand,
+# for if the Pages source is ever switched to "GitHub Actions".
 name: Deploy to GitHub Pages
 
 on:
-  push:
-    branches: ["portfolio-new", "main"]
   workflow_dispatch:
 
 permissions:
